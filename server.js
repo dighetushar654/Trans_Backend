@@ -13,7 +13,7 @@ const app = express();
 dotenv.config();                // instanciating express() in app variable
 var cors = require('cors')      // to use .env variables
 app.use(cors())                 // allow any origin
-const Port = process.env.Port;
+const PORT = process.env.PORT || 5000;
 
 // Database connection 
 require("./db/conn");           // imported the DB connection
@@ -37,6 +37,6 @@ app.get("/", (req, res) => {
 
 
 //Port for listening
-app.listen(Port, () => {
-    console.log(`Server Running On Port ${Port}`);
+app.listen(PORT, () => {
+    console.log(`Server Running On Port ${PORT}`);
 })
